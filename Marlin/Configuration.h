@@ -760,7 +760,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 500, 500, 100, 1000 }
+#define DEFAULT_MAX_ACCELERATION      { 500, 500, 100, 5000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -962,7 +962,7 @@
 #define MIN_PROBE_EDGE 10
 
 // X and Y axis travel speed (mm/m) between probes
-#define XY_PROBE_SPEED 10000
+#define XY_PROBE_SPEED 8000
 
 // Feedrate (mm/m) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
@@ -1090,7 +1090,7 @@
 
 // The size of the print bed
 #define X_BED_SIZE 235
-#define Y_BED_SIZE 235
+#define Y_BED_SIZE 225
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1247,7 +1247,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_X 4
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
@@ -1360,8 +1360,8 @@
 #endif
 
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (50*60)
-#define HOMING_FEEDRATE_Z  (5*60)
+#define HOMING_FEEDRATE_XY (30*60)
+#define HOMING_FEEDRATE_Z  (4*60)
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
@@ -1469,14 +1469,14 @@
 
 // Preheat Constants
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 180
-#define PREHEAT_1_TEMP_BED     70
-#define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
+#define PREHEAT_1_TEMP_HOTEND 185
+#define PREHEAT_1_TEMP_BED     45
+#define PREHEAT_1_FAN_SPEED   255 // Value from 0 to 255
 
 #define PREHEAT_2_LABEL       "ABS"
 #define PREHEAT_2_TEMP_HOTEND 240
 #define PREHEAT_2_TEMP_BED    110
-#define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
+#define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
 
 /**
  * Nozzle Park
@@ -1635,7 +1635,7 @@
  *
  * :['JAPANESE', 'WESTERN', 'CYRILLIC']
  */
-//#define DISPLAY_CHARSET_HD44780 JAPANESE
+#define DISPLAY_CHARSET_HD44780 WESTERN
 
 /**
  * Info Screen Style (0:Classic, 1:Prusa)
