@@ -3,26 +3,22 @@
 # Lock closed issues after a period of inactivity
 #
 
-name: Lock Closed Issues
+name: 'Lock threads'
 
 on:
   schedule:
-    - cron: '0 1/13 * * *'
+    - cron: '22 0 * * *'
 
 jobs:
   lock:
-    name: Lock Closed Issues
-    if: github.repository == 'MarlinFirmware/Marlin'
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: dessant/lock-threads@v2
       with:
         github-token: ${{ github.token }}
         process-only: 'issues'
         issue-lock-inactive-days: '60'
-        issue-exclude-created-before: '2017-07-01T00:00:00Z'
+        issue-exclude-created-before: ''
         issue-exclude-labels: 'no-locking'
         issue-lock-labels: ''
         issue-lock-comment: >
